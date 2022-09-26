@@ -11,3 +11,5 @@ dinosaur = Dinosaur('dino', 10)
 weapon = Weapon('Lazer', 15)
 
 dinosaur.attack(robot.robot_health)
+
+robot.attack(dinosaur.dino_health)
