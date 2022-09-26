@@ -1,20 +1,28 @@
+from turtle import done
 from dinosaur import Dinosaur
 from robot import Robot
 
 class Battlefield:
     def __init__(self):
-        self.robot = Robot
-        self.dinosaur = Dinosaur
-
-    def run_game(self):
-        pass
+        self.robot = Robot('robot')
+        self.dinosaur = Dinosaur('dino', 10)
 
     def display_welcome(self):
-        print('\n Greetings, this is a battle between the past and the futute! \n See who will prevail! \n')
+        print('\n Greetings, this is a battle between the past and the future! \n \n See who will prevail! \n')
 
     def battle_phase(self):
-        pass
+            while self.dinosaur.health and self.robot.health > 0:
+                self.dinosaur.attack(self.robot)
+                self.robot.attack(self.dinosaur)
+            if self.dinosaur.health or self.robot.health <= 0:
+                print('done')
+        
 
     def display_winner(self):
         pass
+
+    def run_game(self):
+        self.display_welcome()
+        self.battle_phase()
+        # display_winner(self)
 
