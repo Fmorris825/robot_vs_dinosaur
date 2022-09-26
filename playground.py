@@ -1,6 +1,5 @@
 from dinosaur import Dinosaur
-from robot import Robot
-# from sandox import Robot
+from sandox import Robot
 
 class Battlefield:
     def __init__(self):
@@ -19,16 +18,14 @@ class Battlefield:
         
 
     def display_winner(self):
-        if self.robot.health <= 0:
+        if self.robot.health < 0:
             print(f'{self.dinosaur.name} has overcame the {self.robot.name} and turned it to metal scrap')
-        elif self.dinosaur.health <= 0:
+        if self.dinosaur.health < 0:
             print(f'{self.robot.name} has put an end to {self.dinosaur.name} for the second time history.')
-        else:
-            print(f'{self.robot.name} & {self.dinosaur.name} have both fallen, the battle results in a stalemate. ')
 
 
     def run_game(self):
         self.display_welcome()
+
         self.battle_phase()
         
-

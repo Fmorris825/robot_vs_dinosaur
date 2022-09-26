@@ -1,17 +1,17 @@
-from weapon import Weapon
+# from weapon import Weapon
 
 class Robot:
     def __init__(self, name):
         self.name = name
         self.health = 100
-        self.active_weapon = Weapon('Lazer', 5)
+        self.active_weapon = Weapon('Lazer', 15)
         self.active_weapon = Weapon('Saber Sword', 25)
         self.active_weapon = Weapon('Hand Cannon', 10)
 
     def choose_weapon(self):
         user_weapon_select = input('CHOOSE YOUR WEAPON!!! \n "Lazer" \n "Saber Sword" \n "Hand Cannon" \n')
         if user_weapon_select == "Lazer":
-            self.active_weapon = Weapon('Lazer', 5)
+            self.active_weapon = Weapon('Lazer', 15)
         elif user_weapon_select == "Saber Sword":
             self.active_weapon = Weapon('Saber Sword', 25)
         elif user_weapon_select == "Hand Cannon":
