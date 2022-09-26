@@ -11,11 +11,14 @@ class Battlefield:
         print('\n Greetings, this is a battle between the past and the future! \n \n See who will prevail! \n')
 
     def battle_phase(self):
-            while self.dinosaur.health and self.robot.health > 0:
-                self.dinosaur.attack(self.robot)
+        above_100 = False
+        while True:
+            if self.dinosaur.health > 0 or self.robot.health > 0:
+                self.dinosaur.attack(self.robot)           
                 self.robot.attack(self.dinosaur)
-            if self.dinosaur.health or self.robot.health <= 0:
+            if self.dinosaur.health < 0 or self.robot.health < 0:
                 print('done')
+                break
         
 
     def display_winner(self):
