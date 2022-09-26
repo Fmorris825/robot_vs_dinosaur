@@ -1,5 +1,3 @@
-from sys import dont_write_bytecode
-from turtle import done
 from dinosaur import Dinosaur
 from robot import Robot
 
