@@ -4,18 +4,18 @@ class Robot:
     def __init__(self, name):
         self.name = name
         self.health = 100
-        self.active_weapon = Weapon('Lazer', 5)
-        self.active_weapon = Weapon('Saber Sword', 25)
-        self.active_weapon = Weapon('Hand Cannon', 10)
 
     def choose_weapon(self):
         user_weapon_select = input('CHOOSE YOUR WEAPON!!! \n "Lazer" \n "Saber Sword" \n "Hand Cannon" \n')
         if user_weapon_select == "Lazer":
             self.active_weapon = Weapon('Lazer', 5)
+            print(F'{self.active_weapon.name} SELECTED ! ')
         elif user_weapon_select == "Saber Sword":
             self.active_weapon = Weapon('Saber Sword', 25)
+            print(F'{self.active_weapon.name} SELECTED ! ')
         elif user_weapon_select == "Hand Cannon":
             self.active_weapon = Weapon('Hand Cannon', 10)
+            print(F'{self.active_weapon.name} SELECTED ! ')
 
 
     def attack(self, dinosaur):
