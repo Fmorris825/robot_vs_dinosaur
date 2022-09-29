@@ -3,6 +3,7 @@ from fleet import Fleet
 from robot import Robot
 from herd import Herd
 from dinosaur import Dinosaur
+from time import sleep
 
 class Battlefield:
     def __init__(self):
@@ -19,8 +20,9 @@ class Battlefield:
     def battle_phase(self):
         self.robots.choose_weapon()
         while self.dinosaurs.user_dino_selection.health > 0 and self.robots.user_robo_selection.health > 0:
-            self.dinosaurs.attack(self.robots.user_robo_selection)           
+            self.dinosaurs.attack(self.robots.user_robo_selection)          
             self.robots.attack(self.dinosaurs.user_dino_selection)
+
         self.display_winner()
         
 

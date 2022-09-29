@@ -1,3 +1,4 @@
+from time import sleep
 from robot import Robot
 from weapon import Weapon
 
@@ -11,16 +12,23 @@ class Fleet:
 
 
     def character_selection(self):
-        user_robo_selection = input(f'Choose your Robot {self.robolist}')
-        if user_robo_selection == "Terminator 1999":
+        i = 0
+        print()
+        for robot in self.robolist:
+            i += 1
+            print(f'{[i]} {robot}')
+            sleep(.3)
+        print()
+        user_robo_selection = input(f'Choose your Robot [1]-[3] \n\n')
+        if user_robo_selection == "1":
             self.user_robo_selection = self.terminator_1999
-            print(f'YOU HAVE SELECTED: {self.terminator_1999.name}')
-        elif user_robo_selection == "Terminator 2010":
+            print(f'\nYOU HAVE SELECTED: {self.terminator_1999.name}\n')
+        elif user_robo_selection == "2":
             self.user_robo_selection = self.terminator_2010
-            print(f'YOU HAVE SELECTED: {self.terminator_2010.name}')
-        elif user_robo_selection == "Terminator 2100":
+            print(f'\nYOU HAVE SELECTED: {self.terminator_2010.name}\n')
+        elif user_robo_selection == "3":
             self.user_robo_selection = self.terminator_2100
-            print(f'YOU HAVE SELECTED: {self.terminator_2100.name}')
+            print(f'\nYOU HAVE SELECTED: {self.terminator_2100.name}\n')
 
 
     def choose_weapon(self):
@@ -37,4 +45,5 @@ class Fleet:
 
     def attack(self, dinosaur):
         dinosaur.health -= self.active_weapon.attack_power
-        print(f"Robot has attacked Dinosaur using a {self.active_weapon.name} with {self.active_weapon.attack_power}, Dinosaur now has a {dinosaur.health} health. \n")
+        print(f"{self.user_robo_selection.name} has attacked {dinosaur.name} using a {self.active_weapon.name} with {self.active_weapon.attack_power}, {dinosaur.name} now has a {dinosaur.health} health. \n")
+        sleep(.5)
